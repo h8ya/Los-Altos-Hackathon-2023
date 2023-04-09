@@ -17,9 +17,9 @@ function isInteger(input) {
   return /^\d+$/.test(input);
 }
 
-newTab.addEventListener("click", async () => {
-  window.open('https://console.twilio.com/us1/develop/phone-numbers/manage/incoming', '_blank');
-})
+// newTab.addEventListener("click", async () => {
+//   window.open('https://console.twilio.com/us1/develop/phone-numbers/manage/incoming', '_blank');
+// })
 
 note_submit_el.addEventListener("click", async () => {
   let sid = accsid.value;
@@ -32,7 +32,7 @@ note_submit_el.addEventListener("click", async () => {
     blank.innerHTML = "Please Fill in all fields before submitting";
     return;
   }
-  if(!isInteger(tw))
+  if(!isInteger(tw)&&tw!="")
   {
     if (!isInteger(tw)) { err.innerHTML = "Please Enter only numbers"; }
     return;
