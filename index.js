@@ -17,7 +17,7 @@ externalip((err, ip) => {
 
     // Create a TwiML response with the formatted IP address embedded in the message
     const twiml = new twilio.twiml.VoiceResponse();
-    twiml.say(`I need help. My IP address is ${formattedIP}`);
+    twiml.say(process.env.message=+` My IP address is ${formattedIP}`);
 
     // Initiate a Twilio call using the TwiML response
     client.calls.create({
