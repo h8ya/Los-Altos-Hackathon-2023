@@ -58,6 +58,8 @@ Add the Target User you want to call & have them verify themself with Add Target
 
 https://www.twilio.com/code-exchange/basic-voice-auto-response
 
+Scroll down to "Step 3", Deploy the application
+
 Go to live application copy the Webhook URL
 
 https://www.twilio.com/console/phone-numbers/incoming
