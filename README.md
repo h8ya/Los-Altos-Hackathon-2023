@@ -1,5 +1,7 @@
 # Los-Altos-Hackathon-2023
 
+MOVE ALL FILES INTO hello-voice before anything
+
 ## How To Use
 Install Nodejs & Python 
 
