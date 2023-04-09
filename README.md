@@ -8,7 +8,9 @@ https://nodejs.org/en/download
 https://www.python.org/downloads/
 
 NPM MODULES USED:
+
 npm install dotenv
+
 npm install twilio
 
 
