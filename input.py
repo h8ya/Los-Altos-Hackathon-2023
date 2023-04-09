@@ -1,19 +1,7 @@
-import keyboard, sys
+import keyboard, subprocess
 
-sys.stdout = open(".env", "a")
 number = ""
 dict = {"!":"1", "@":"2", "#":"3", "$":"4", "%":"5", "^":"6", "&":"7", "*":"8", "(":"9", ")":"0"}
-
-with open('.env', 'r') as file:
-    data = file.readlines()
-
-for line in range(len(data)):
-    if "number=" in data[line]:
-        data[line] = "number=+"
-        break
-
-with open('.env', 'w') as file:
-    file.writelines(data)
 
 while True:
     if keyboard.is_pressed("alt"):
@@ -23,7 +11,17 @@ while True:
                 if event.name == "enter":
                     # call
                     # print("call", number)
-                    print(number, sep="", end="")
+                    with open('.env', 'r') as file:
+                        data = file.readlines()
+
+                    for line in range(len(data)):
+                        if "number=" in data[line]:
+                            data[line] = ("number=+" + number)
+                            break
+
+                    with open('.env', 'w') as file:
+                        file.writelines(data)
+                    subprocess.call(["node", "index.js"])
                     break
                 elif event.name == "backspace":
                     number = number[:-1]
