@@ -4,6 +4,7 @@ const messa = document.getElementById("me");
 let count = 0;
 //const pNum = document.getElementById('phoneN');
 const err = document.getElementById('er');
+const ipVal = document.getElementById('msg');
 const blank = document.getElementById('blank');
 const twill = document.getElementById('twillioNum');
 const note_submit_el = document.getElementById('noteS');
@@ -12,6 +13,11 @@ const accsid = document.getElementById('accountSid');
 const accsid_butt = document.getElementById('accButt');
 const newTab = document.getElementById('newTab');
 const element = document.getElementById("error");
+
+// Get the user's external IP address
+
+// Get the user's external IP address
+
 
 function isInteger(input) {
   return /^\d+$/.test(input);
