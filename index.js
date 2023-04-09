@@ -7,7 +7,7 @@ twiml.say('I need help. I need help. I need help, my address is 1234 Bob Street,
 
 client.calls.create({
   twiml: twiml.toString(),
-  to: "+INSERT_PHONE_NUMBER_EXTENSION"+"INSERT_TARGET_PHONE_NUMBER", //without any extension numbers
+  to: "+"+"INSERT_PHONE_NUMBER_EXTENSION"+"INSERT_TARGET_PHONE_NUMBER", //without any extension numbers
   from: "INSERT_TWILIO_PHONE_NUMBER",
 })
   .then(call => console.log(call.sid));
