@@ -1,4 +1,4 @@
 # Los-Altos-Hackathon-2023
 
-# How To Use
+## How To Use
 yes
