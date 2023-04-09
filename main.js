@@ -108,7 +108,7 @@ function createWindow() {
         }
 
         // Update the twilioNum value
-        lines[twilioN] = `twilioNum=${data.tw}`;
+        lines[twilioN] = `twilioNum=${"+" + data.tw}`;
         console.log(data.tw);
     }
     //message
