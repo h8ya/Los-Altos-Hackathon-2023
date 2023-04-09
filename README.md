@@ -17,6 +17,8 @@ npm install twilio
 
 npm install external-ip
 
+npm install electron --save-dev
+
 
 START: https://www.twilio.com/try-twilio 
 
