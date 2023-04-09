@@ -15,6 +15,7 @@ function createWindow() {
     }
   });
 
+  
   ipcMain.handle('edit-env', (event, data) => {
     if (!data) {
       return { success: false, error: 'No data provided' };
@@ -53,21 +54,21 @@ function createWindow() {
     //twillio num begins
     if(data.tw !== "")
     {
-        const twillioN = lines.findIndex(line => line.startsWith('twillioNum='));
-        if (twillioN=== -1) {
-        return { success: false, error: 'twillioNum variable not found in .env file' };
+        const twilioN = lines.findIndex(line => line.startsWith('twilioNum='));
+        if (twilioN=== -1) {
+        return { success: false, error: 'twilioNum variable not found in .env file' };
         }
 
         // Update the twillioNum value
-        lines[twillioN] = `twillioNum=${data.tw}`;
+        lines[twilioN] = `twilioNum=${data.tw}`;
         console.log(data.tw);
     }
     //message
-    if(data.mes)
+    if(data.mes !== "" || data.ip5 != "")
     {
         const message1 = lines.findIndex(line => line.startsWith('message='));
         if (message1=== -1) {
-        return { success: false, error: 'twillioNum variable not found in .env file' };
+        return { success: false, error: 'twilioNum variable not found in .env file' };
         }
 
         // Update the twillioNum value
