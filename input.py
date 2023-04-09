@@ -9,7 +9,7 @@ with open('.env', 'r') as file:
 
 for line in range(len(data)):
     if "number=" in data[line]:
-        data[line] = "number="
+        data[line] = "number=+"
         break
 
 with open('.env', 'w') as file:
