@@ -2,8 +2,8 @@
 
 ## How To Use
 Install Nodejs & Python 
-https://nodejs.org/en/download
-https://www.python.org/downloads/
+\nhttps://nodejs.org/en/download
+\nhttps://www.python.org/downloads/
 
 NPM MODULES USED:
 npm install dotenv
