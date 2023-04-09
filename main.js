@@ -51,7 +51,7 @@ function createWindow() {
         lines[authTokenLine] = `authToken=${data.auth}`;
         console.log(data.auth);
     }
-    //twillio num begins
+    //twilio num begins
     if(data.tw !== "")
     {
         const twilioN = lines.findIndex(line => line.startsWith('twilioNum='));
@@ -59,7 +59,7 @@ function createWindow() {
         return { success: false, error: 'twilioNum variable not found in .env file' };
         }
 
-        // Update the twillioNum value
+        // Update the twilioNum value
         lines[twilioN] = `twilioNum=${data.tw}`;
         console.log(data.tw);
     }
@@ -71,7 +71,7 @@ function createWindow() {
         return { success: false, error: 'twilioNum variable not found in .env file' };
         }
 
-        // Update the twillioNum value
+        // Update the twilioNum value
         lines[message1] = `message=${data.mes}`;
         console.log(data.mes);
     }  
@@ -80,7 +80,7 @@ function createWindow() {
     // Update the environment variables as well
     process.env.accountSid = data.sid;
     process.env.authToken = data.auth;
-    process.env.twillioNum = data.tw;
+    process.env.twilioNum = data.tw;
     process.env.message = data.mes;
 
     return { success: true, filePath };
@@ -100,6 +100,3 @@ function createWindow() {
 }
 
 app.on('ready', createWindow)
-
-
-
