@@ -34,23 +34,24 @@ Get TWILIO Phone number right under auth token and SID go to index.js
 
 Add the Target User you want to call & have them verify themself with Add Target Phone Number if your phone number is already there, you can skip this step. 
 
-
 Deploy Application
 
-Deploy application, go to live application copy the Webhook URL
+https://www.twilio.com/code-exchange/basic-voice-auto-response
 
-Incoming Numbers
+Go to live application copy the Webhook URL
+
+https://www.twilio.com/console/phone-numbers/incoming
 
 Scroll to bottom, edit the “A MESSAGE COMES IN”  box with the link and paste in the Webhook URL & Save
 
 PAYMENT SECTION: Navigate to upgrade acc with promo code or add balance Input ADDRESS then either 
+https://console.twilio.com/us1/billing/manage-billing/upgrade?frameUrl=%2Fconsole%2Fbilling%2Fupgrade%3Fx-target-region%3Dus1
 
 ADD BALANCE
 
 or input
 
 PROMO CODE
-
 
 USAGE GUIDE:
 
@@ -61,4 +62,3 @@ alt + shift + w = close program
 Inputting Invalid Number will not do anything, and will allow user to re-enter a valid number. //subject to change - rough sketch
 
 Click X on window bar to hide interface from view; It will run in the background.
-
