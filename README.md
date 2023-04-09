@@ -73,7 +73,7 @@ or input
 
 PROMO CODE
 
-#USAGE GUIDE:
+## USAGE GUIDE:
 
 run exe file = will open up interface & keyboard detection program running in the background.
 
