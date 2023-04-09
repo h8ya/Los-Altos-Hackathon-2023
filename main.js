@@ -1,150 +1,66 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
-console.log('Installing required modules...');
-const { exec } = require('node:child_process')
+const title_el = document.getElementById('title');
+title_el.innerText = api.title;
+const messa = document.getElementById("me");
+let count = 0;
+//const pNum = document.getElementById('phoneN');
+const err = document.getElementById('er');
+const ipVal = document.getElementById('msg');
+const blank = document.getElementById('blank');
+const twilio = document.getElementById('twilioNum');
+const note_submit_el = document.getElementById('noteS');
+const authTok = document.getElementById('authToken');
+const accsid = document.getElementById('accountSid');
+const accsid_butt = document.getElementById('accButt');
+const newTab = document.getElementById('newTab');
+const element = document.getElementById("error");
 
-const commands = [
-  'npm install dotenv',
-  'npm install twilio',
-  'npm install external-ip',
-  'npm install electron --save-dev'
-];
+// Get the user's external IP address
 
-// function to execute the commands sequentially
-const installModules = (index) => {
-  if (index === commands.length) {
-    console.log('All modules have been installed successfully!');
+// Get the user's external IP address
+
+
+function isInteger(input) {
+  return /^\d+$/.test(input);
+}
+
+// newTab.addEventListener("click", async () => {
+//   window.open('https://console.twilio.com/us1/develop/phone-numbers/manage/incoming', '_blank');
+// })
+
+note_submit_el.addEventListener("click", async () => {
+  let sid = accsid.value;
+  let auth = authTok.value;
+  let tw = twilio.value;
+  let mes = messa.value;
+  let twilioNum = "";
+  if (count==0&&((sid === "") || (auth === "") || (tw === "") || (mes === ""))) {
+    if(isInteger(tw)){err.innerHTML=""}
+    blank.innerHTML = "Please Fill in all fields before submitting";
     return;
   }
-
-  exec(commands[index], (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Could not install ${commands[index]}: ${error}`);
-      return;
-    }
-    console.log(`Installed ${commands[index]} successfully.`);
-    installModules(index + 1);
-  });
-};
-
-// call the function to start installing the modules
-installModules(0);
-function pythonRun()
-{
-  const { spawn } = require('child_process');
-  const pythonScript = spawn('python', ['input.py']);
-  console.log("Python test");
-  pythonScript.stdout.on('data', (data) => {
-    console.log(`${data}`);
-    console.log("it works");
-  });
- 
-}
-pythonRun();
-console.log('Modules installation in progress...');
-
-console.log('Modules installation in progress...');
-
-
-// Load the .env file
-
-const dotenv = require('dotenv');
-const path = require('path');
-const fs = require('fs');
-
-// Load the .env file
-dotenv.config();
-
-function createWindow() {
-  const win = new BrowserWindow({
-    width: 760,
-    height: 560,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
-  });
-
-  
-  ipcMain.handle('edit-env', (event, data) => {
-    if (!data) {
-      return { success: false, error: 'No data provided' };
-    }
-
-    const filePath = path.join( __dirname,'.env');
-    const fileContents = fs.readFileSync(filePath, 'utf-8');
-    const lines = fileContents.split('\n');
-
-    // Find the line that contains the accountSid variable
-    // if count > 0 and new one is blankthen you keep the env file as it already was
-    if(data.sid !== "")
-    {
-        const accountSidLineIndex = lines.findIndex(line => line.startsWith('accountSid='));
-        if (accountSidLineIndex === -1) {
-        // If the accountSid variable is not found, return an error
-        return { success: false, error: 'accountSid variable not found in .env file' };
-        }
-
-        // Update the accountSid value
-        lines[accountSidLineIndex] = `accountSid=${data.sid}`;
-    }
-    //authentication token begins
-    if(data.auth !== "")
-    {
-        const authTokenLine = lines.findIndex(line => line.startsWith('authToken='));
-        if (authTokenLine=== -1) {
-        // If the accountSid variable is not found, return an error
-        return { success: false, error: 'accountSid variable not found in .env file' };
-        }
-
-        // Update the accountSid value
-        lines[authTokenLine] = `authToken=${data.auth}`;
-        console.log(data.auth);
-    }
-    //twilio num begins
-    if(data.tw !== "")
-    {
-        const twilioN = lines.findIndex(line => line.startsWith('twilioNum='));
-        if (twilioN=== -1) {
-        return { success: false, error: 'twilioNum variable not found in .env file' };
-        }
-
-        // Update the twilioNum value
-        lines[twilioN] = `twilioNum=${"+" + data.tw}`;
-        console.log(data.tw);
-    }
-    //message
-    if(data.mes !== "" || data.ip5 != "")
-    {
-        const message1 = lines.findIndex(line => line.startsWith('message='));
-        if (message1=== -1) {
-        return { success: false, error: 'twilioNum variable not found in .env file' };
-        }
-
-        // Update the twilioNum value
-        lines[message1] = `message=${data.mes}`;
-        console.log(data.mes);
-    }  
-    fs.writeFileSync(filePath, lines.join('\n'));
-
-    // Update the environment variables as well
-    process.env.accountSid = data.sid;
-    process.env.authToken = data.auth;
-    process.env.twilioNum = data.tw;
-    process.env.message = data.mes;
-
-    return { success: true, filePath };
-  });
-  win.onkeydown = function(gfg){
-    if(gfg.keyCode===32)
-    {
-        win.show();
-    }
+  if(!isInteger(tw)&&tw!="")
+  {
+    if (!isInteger(tw)) { err.innerHTML = "Please Enter only numbers"; }
+    return;
   }
-  win.loadFile('src/index.html');
-  win.on('close', e => {
-    e.preventDefault() // Prevents quit
-    win.hide()
+  if(isInteger(tw))
+  {
+    err.innerHTML = "";
+  }
+  if((sid !== "") && (auth !== "") && (tw !== "") && (mes !== ""))
+  {
+    blank.innerHTML = "";
+  }
+  count++;
+  const res = await api.createNote({
+    sid,
+    auth,
+    tw,
+    mes
   })
-
-}
-
-app.on('ready', createWindow)
+  console.log(res + " The Currnet Count: " + count);
+  accsid.value = "";
+  authTok.value = "";
+  twilio.value = "";
+  messa.value = "";
+})
