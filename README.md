@@ -57,7 +57,7 @@ USAGE GUIDE:
 
 alt + shift + 11231231234 + enter = to call Target Number. Target Number in this example is 11231231234.
 
-alt + shift + w = close program
+alt + shift + c = close program
 
 Inputting Invalid Number will not do anything, and will allow user to re-enter a valid number. //subject to change - rough sketch
 
