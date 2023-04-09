@@ -6,7 +6,7 @@ let count = 0;
 const err = document.getElementById('er');
 const ipVal = document.getElementById('msg');
 const blank = document.getElementById('blank');
-const twill = document.getElementById('twillioNum');
+const twilio = document.getElementById('twilioNum');
 const note_submit_el = document.getElementById('noteS');
 const authTok = document.getElementById('authToken');
 const accsid = document.getElementById('accountSid');
@@ -30,9 +30,9 @@ function isInteger(input) {
 note_submit_el.addEventListener("click", async () => {
   let sid = accsid.value;
   let auth = authTok.value;
-  let tw = twill.value;
+  let tw = twilio.value;
   let mes = messa.value;
-  let twillioNum = "";
+  let twilioNum = "";
   if (count==0&&((sid === "") || (auth === "") || (tw === "") || (mes === ""))) {
     if(isInteger(tw)){err.innerHTML=""}
     blank.innerHTML = "Please Fill in all fields before submitting";
@@ -61,6 +61,6 @@ note_submit_el.addEventListener("click", async () => {
   console.log(res + " The Currnet Count: " + count);
   accsid.value = "";
   authTok.value = "";
-  twill.value = "";
+  twilio.value = "";
   messa.value = "";
 })
