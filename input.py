@@ -15,8 +15,8 @@ while True:
                         data = file.readlines()
 
                     for line in range(len(data)):
-                        if "number=" in data[line]:
-                            data[line] = ("number=+" + number)
+                        if "targetNumber=" in data[line]:
+                            data[line] = ("targetNumber=+" + number)
                             break
 
                     with open('.env', 'w') as file:
