@@ -89,3 +89,4 @@ alt + shift + w = close keyboard detection program
 
 Inputting Invalid Number will not do anything, and will allow user to re-enter a valid number. 
 
+If you run the program multiple times it might fix any issues about missing dependences, as it installs it as soon as you run it the exe.
