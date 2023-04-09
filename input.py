@@ -24,7 +24,7 @@ while True:
                     # call
                     # print("call", number)
                     print("number=", number, sep="")
-                    number = ""
+                    break
                 elif event.name == "backspace":
                     number = number[:-1]
                     # print(number)
