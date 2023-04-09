@@ -18,7 +18,7 @@ npm install external-ip
 npm install electron --save-dev
 
 
-#START: https://www.twilio.com/try-twilio 
+##START: https://www.twilio.com/try-twilio 
 
 
 Answer the prompt questions with the following answers:
@@ -44,7 +44,7 @@ Would you like Twilio to host your code?
 Yes
 
 
-#Follow Step One after signup to get a Twilio number
+##Follow Step One after signup to get a Twilio number
 
 Navigate to https://console.twilio.com/
 
@@ -54,7 +54,7 @@ Get TWILIO Phone number right under auth token and SID go to index.js
 
 Add the Target User you want to call & have them verify themself with Add Target Phone Number if your phone number is already there, you can skip this step. 
 
-#Deploy Application
+##Deploy Application
 
 https://www.twilio.com/code-exchange/basic-voice-auto-response
 
@@ -64,7 +64,7 @@ https://www.twilio.com/console/phone-numbers/incoming
 
 Scroll to bottom, edit the “A MESSAGE COMES IN”  box with the link and paste in the Webhook URL & Save
 
-#PAYMENT SECTION: Navigate to upgrade acc with promo code or add balance Input ADDRESS then either 
+##PAYMENT SECTION: Navigate to upgrade acc with promo code or add balance Input ADDRESS then either 
 https://console.twilio.com/us1/billing/manage-billing/upgrade?frameUrl=%2Fconsole%2Fbilling%2Fupgrade%3Fx-target-region%3Dus1
 
 ADD BALANCE
