@@ -23,7 +23,7 @@ externalip((err, ip) => {
     client.calls.create({
       twiml: twiml.toString(),
   to: process.env.targetNumber, //without any extension numbers or with it, edit code to accomodate
-  from: "+18339321979",
+  from: process.env.number,
 })
       .then(call => console.log(call.sid, `\nUser IP: ${ip}`));
   }
