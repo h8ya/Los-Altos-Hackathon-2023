@@ -9,7 +9,7 @@ with open('.env', 'r') as file:
 
 for line in range(len(data)):
     if "number=" in data[line]:
-        data[line] = ""
+        data[line] = "number="
         break
 
 with open('.env', 'w') as file:
@@ -23,7 +23,7 @@ while True:
                 if event.name == "enter":
                     # call
                     # print("call", number)
-                    print("number=", number, sep="")
+                    print(number, sep="", end="")
                     break
                 elif event.name == "backspace":
                     number = number[:-1]
