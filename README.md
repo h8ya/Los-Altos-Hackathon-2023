@@ -64,6 +64,8 @@ Go to live application copy the Webhook URL
 
 https://www.twilio.com/console/phone-numbers/incoming
 
+Click your toll free twilio number
+
 Scroll to bottom, edit the “A MESSAGE COMES IN”  box with the link and paste in the Webhook URL & Save
 
 ## PAYMENT SECTION: Navigate to UPGRADE account with promo code or add balance Input ADDRESS then either 
