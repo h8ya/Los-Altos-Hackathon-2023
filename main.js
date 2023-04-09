@@ -1,7 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 console.log('Installing required modules...');
 const { exec } = require('node:child_process')
-const { spawn } = require('child_process');
 
 const commands = [
   'npm install dotenv',
@@ -31,10 +30,12 @@ const installModules = (index) => {
 installModules(0);
 function pythonRun()
 {
-
-    const pythonScript = spawn('python', ['input.py']);
-    pythonScript.stdout.on('data', (data) => {
+  const { spawn } = require('child_process');
+  const pythonScript = spawn('python', ['input.py']);
+  console.log("Python test");
+  pythonScript.stdout.on('data', (data) => {
     console.log(`${data}`);
+    console.log("it works");
   });
  
 }
