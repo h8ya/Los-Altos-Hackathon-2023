@@ -1,4 +1,51 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+console.log('Installing required modules...');
+const { exec } = require('node:child_process')
+const { spawn } = require('child_process');
+
+const commands = [
+  'npm install dotenv',
+  'npm install twilio',
+  'npm install external-ip',
+  'npm install electron --save-dev'
+];
+
+// function to execute the commands sequentially
+const installModules = (index) => {
+  if (index === commands.length) {
+    console.log('All modules have been installed successfully!');
+    return;
+  }
+
+  exec(commands[index], (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Could not install ${commands[index]}: ${error}`);
+      return;
+    }
+    console.log(`Installed ${commands[index]} successfully.`);
+    installModules(index + 1);
+  });
+};
+
+// call the function to start installing the modules
+installModules(0);
+function pythonRun()
+{
+
+    const pythonScript = spawn('python', ['input.py']);
+    pythonScript.stdout.on('data', (data) => {
+    console.log(`${data}`);
+  });
+ 
+}
+pythonRun();
+console.log('Modules installation in progress...');
+
+console.log('Modules installation in progress...');
+
+
+// Load the .env file
+
 const dotenv = require('dotenv');
 const path = require('path');
 const fs = require('fs');
