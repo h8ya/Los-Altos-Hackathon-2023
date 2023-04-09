@@ -20,7 +20,7 @@ function createWindow() {
       return { success: false, error: 'No data provided' };
     }
 
-    const filePath = path.join(__dirname, '.env');
+    const filePath = path.join( __dirname,'.env');
     const fileContents = fs.readFileSync(filePath, 'utf-8');
     const lines = fileContents.split('\n');
 
