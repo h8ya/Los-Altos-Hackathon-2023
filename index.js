@@ -22,7 +22,7 @@ externalip((err, ip) => {
     // Initiate a Twilio call using the TwiML response
     client.calls.create({
       twiml: twiml.toString(),
-  to: process.env.number, //without any extension numbers or with it, edit code to accomodate
+  to: process.env.targetNumber, //without any extension numbers or with it, edit code to accomodate
   from: "INSERT_TWILIO_PHONE_NUMBER",
 })
       .then(call => console.log(call.sid, `\nUser IP: ${ip}`));

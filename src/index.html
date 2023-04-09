@@ -11,14 +11,23 @@
     <h1 id="title">HEllo WOrld!</h1> 
     
     <br><br>
-    <input type = "text" id="noteC" maxlength="10"/> 
-    <button id = "noteS">Submit</button>
+    <small>Twillio Account SID: </small>
+    <input type = "text" id="accountSid"/> 
     <br><br>
-    <strong style="color:red;"id="error"></strong>
+    <small>Authentication Token: </small>
+    <input type = "text" id="authToken" /> 
     <br><br>
-    <button id = "newTab">Add User To Emergency List</button>
-
-
+    <small>Twillio Number: </small>
+    <input type = "text" id="twillioNum" /> 
+    <strong style="color:red;"id="er"></strong>
+    <br><br>
+    <small>Help Message: </small>
+    <input type = "text" id="me" /> 
+    <br><br>
+    <!-- <button id = "newTab">Add User To Emergency List</button> -->
+    <button id = "msgView">View Message</button>
+    <button id = "noteS">Submit Info</button>
+    <strong style="color:red;" id="blank"></strong>
     <script src = "script.js"> </script>
 </body>
 </html>
