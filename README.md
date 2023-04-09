@@ -79,6 +79,8 @@ PROMO CODE
 
 ## USAGE GUIDE:
 
+In the interface, when inputting the Twilio Number, remove the +
+
 run exe file = will open up interface & keyboard detection program running in the background.
 
 alt + shift + 11231231234 + enter = to call Target Number. Target Number in this example is 11231231234.
