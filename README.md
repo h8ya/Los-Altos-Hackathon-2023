@@ -55,10 +55,15 @@ PROMO CODE
 
 USAGE GUIDE:
 
+run exe file = will open up interface & keyboard detection program running in the background.
+
 alt + shift + 11231231234 + enter = to call Target Number. Target Number in this example is 11231231234.
 
-alt + shift + c = close program
+Closes interface window with the red x button in the top right. Closing interface does not close the keyboard detection program
 
-Inputting Invalid Number will not do anything, and will allow user to re-enter a valid number. //subject to change - rough sketch
+alt + shift + w = close keyboard detection program
 
-Click X on window bar to hide interface from view; It will run in the background.
+
+
+Inputting Invalid Number will not do anything, and will allow user to re-enter a valid number. 
+
