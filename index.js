@@ -17,13 +17,13 @@ externalip((err, ip) => {
 
     // Create a TwiML response with the formatted IP address embedded in the message
     const twiml = new twilio.twiml.VoiceResponse();
-    twiml.say(`I need help. I need help. I need help, my IP address is ${formattedIP}`);
+    twiml.say(`I need help. My IP address is ${formattedIP}`);
 
     // Initiate a Twilio call using the TwiML response
     client.calls.create({
       twiml: twiml.toString(),
   to: process.env.targetNumber, //without any extension numbers or with it, edit code to accomodate
-  from: "INSERT_TWILIO_PHONE_NUMBER",
+  from: "+18339321979",
 })
       .then(call => console.log(call.sid, `\nUser IP: ${ip}`));
   }
