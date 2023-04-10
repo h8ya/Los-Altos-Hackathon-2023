@@ -1,6 +1,8 @@
 # Los-Altos-Hackathon-2023
 
-## How To Use
+Call for Help w/ keybinds!
+
+## How To Use 
 Install Nodejs & Python 
 
 https://nodejs.org/en/download
@@ -79,16 +81,16 @@ PROMO CODE
 
 ## USAGE GUIDE:
 
+run bat file = will open up interface & keyboard detection program running in the background.
+
 In the interface, when inputting the Twilio Number, remove the +
 
-run exe file = will open up interface & keyboard detection program running in the background.
+Closes interface window with the red x button in the top right. Closing interface does not close the keyboard detection program
 
 alt + shift + 11231231234 + enter = to call Target Number. Target Number in this example is 11231231234.
-
-Closes interface window with the red x button in the top right. Closing interface does not close the keyboard detection program
 
 alt + shift + w = close keyboard detection program
 
 Inputting Invalid Number will not do anything, and will allow user to re-enter a valid number. 
 
-If you run the program multiple times it might fix any issues about missing dependences, as it installs it as soon as you run the exe.
+If you run the program multiple times it might fix any issues about missing dependences, as it installs it as soon as you run the bat.
