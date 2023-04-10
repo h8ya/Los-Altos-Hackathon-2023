@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 console.log('Installing required modules...');
 const { exec } = require('node:child_process')
-
+let count1 = 0;
 const commands = [
   'npm install dotenv',
   'npm install twilio',
@@ -15,7 +15,6 @@ const installModules = (index) => {
     console.log('All modules have been installed successfully!');
     return;
   }
-
   exec(commands[index], (error, stdout, stderr) => {
     if (error) {
       console.error(`Could not install ${commands[index]}: ${error}`);
@@ -24,6 +23,7 @@ const installModules = (index) => {
     console.log(`Installed ${commands[index]} successfully.`);
     installModules(index + 1);
   });
+  count1++;
 };
 
 // call the function to start installing the modules
@@ -40,13 +40,12 @@ function pythonRun()
  
 }
 pythonRun();
-console.log('Modules installation in progress...');
 
-console.log('Modules installation in progress...');
 
 
 // Load the .env file
-
+if(count1 > 0)
+{
 const dotenv = require('dotenv');
 const path = require('path');
 const fs = require('fs');
@@ -147,4 +146,5 @@ function createWindow() {
 
 }
 
-app.on('ready', createWindow)
+app.on('ready', createWindow);
+}
